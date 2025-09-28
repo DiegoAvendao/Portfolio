@@ -49,21 +49,23 @@ const Projects = () => {
   ];
 
   return (
-    <section className="max-w-4xl mx-auto px-6 mb-20">
+    <section className="max-w-4xl mx-auto px-6 mb-20 animate-in fade-in slide-in-from-bottom-4 duration-700" style={{ animationDelay: '400ms' }}>
       <div className="flex items-center justify-between mb-8">
         <h2 className="section-heading">Projects</h2>
         <a 
           href="#" 
-          className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors text-sm"
+          className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-all duration-200 text-sm transform hover:translate-x-1"
         >
           More
-          <ChevronRight className="w-4 h-4" />
+          <ChevronRight className="w-4 h-4 transition-transform duration-200" />
         </a>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {projects.map((project) => (
-          <ProjectCard key={project.title} {...project} />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 stagger-animation">
+        {projects.map((project, index) => (
+          <div key={project.title} style={{ '--stagger': index } as React.CSSProperties}>
+            <ProjectCard {...project} />
+          </div>
         ))}
       </div>
     </section>

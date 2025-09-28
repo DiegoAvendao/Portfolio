@@ -37,50 +37,180 @@
     --ring: 210 40% 98%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Gradient for hover effect */
+    --card-hover-gradient: conic-gradient(from 0deg at 50% 50%, transparent 340deg, hsl(var(--primary)) 360deg);
   }
 
-}
+  .dark {
+    --background: 220 13% 9%;
+    --foreground: 210 40% 98%;
 
-@layer components {
-  .project-card {
-    @apply bg-card border border-card-border rounded-lg p-6 transition-all duration-300 hover:border-card-hover-border hover:shadow-[0_0_20px_rgba(255,255,255,0.1)];
-  }
-  
-  .tech-badge {
-    @apply bg-secondary text-secondary-foreground px-2 py-1 rounded text-xs font-medium;
-  }
-  
-  .social-icon {
-    @apply w-5 h-5 text-muted-foreground hover:text-foreground transition-colors duration-200;
-  }
-  
-  .section-heading {
-    @apply text-xl font-semibold text-foreground mb-6;
-  }
-}
+    --card: 220 13% 11%;
+    --card-foreground: 210 40% 98%;
+    --card-border: 220 13% 15%;
+    --card-hover-border: 210 40% 98%;
 
-@layer base {
+    --popover: 220 13% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 220 13% 9%;
+
+    --secondary: 220 13% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 13% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 220 13% 15%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 15%;
+    --input: 220 13% 15%;
+    --ring: 210 40% 98%;
+
+    --card-hover-gradient: conic-gradient(from 0deg at 50% 50%, transparent 340deg, hsl(var(--primary)) 360deg);
+  }
+
+  :root:not(.dark) {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --card-border: 214.3 31.8% 91.4%;
+    --card-hover-border: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --card-hover-gradient: conic-gradient(from 0deg at 50% 50%, transparent 340deg, hsl(var(--primary)) 360deg);
+  }
+
   * {
     @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .project-card {
+    @apply relative bg-card border border-card-border rounded-lg p-6 transition-all duration-500 ease-out overflow-hidden;
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card)) 100%);
+  }
+  
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--card-hover-gradient);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .project-card:hover::before {
+    opacity: 1;
+  }
+  
+  .tech-badge {
+    @apply bg-secondary text-secondary-foreground px-2 py-1 rounded text-xs font-medium transition-all duration-200 hover:scale-105;
+  }
+  
+  .social-icon {
+    @apply w-5 h-5 text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 hover:rotate-6;
+  }
+  
+  .section-heading {
+    @apply text-xl font-semibold text-foreground mb-6 animate-in fade-in slide-in-from-left-4 duration-700;
+  }
+  
+  .experience-line {
+    @apply absolute left-1 top-8 bottom-0 w-px bg-border;
+  }
+  
+  .experience-dot {
+    @apply w-2 h-2 rounded-full bg-primary border-2 border-background relative z-10 transition-all duration-300 hover:scale-150;
+  }
+  
+  .animate-in {
+    animation-fill-mode: both;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .slide-in-from-left-4 {
+    animation: slideInFromLeft 0.6s ease-out;
+  }
+  
+  .slide-in-from-bottom-4 {
+    animation: slideInFromBottom 0.6s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideInFromLeft {
+    from { 
+      opacity: 0; 
+      transform: translateX(-1rem); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateX(0); 
+    }
+  }
+  
+  @keyframes slideInFromBottom {
+    from { 
+      opacity: 0; 
+      transform: translateY(1rem); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+  
+  .stagger-animation > * {
+    animation-delay: calc(var(--stagger) * 100ms);
   }
 }
