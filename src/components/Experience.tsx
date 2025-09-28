@@ -3,10 +3,10 @@ import { ExternalLink } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      period: "2022 - Present",
-      title: "Software Developer",
-      company: "ATM Grupo Maggioli",
-      description: "Development solutions for public administration using advanced technologies. In my role, I have improved development agility by implementing modern techniques, creating Typescript libraries for sharing utilities across projects, writing documentation and upgrading outdated projects to new technologies."
+      period: "2024 - Present",
+      title: "Frontend Developer",
+      company: "Ferag/THWS",
+      description: "Led frontend development of logistics and warehouse management solutions at THWS in cooperation with Ferag, a Swiss leader in material handling systems. I re-platformed a desktop application into a modern Angular 18 web app, implementing role-based authentication, building modular dashboard components, integrating REST APIs, and creating interactive data visualizations with ngx-graph."
     },
     {
       period: "2020 - 2022",

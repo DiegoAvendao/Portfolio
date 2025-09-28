@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <header className="flex items-center justify-between py-8 max-w-4xl mx-auto px-6 animate-in fade-in slide-in-from-left-4 duration-700">
       <div className="text-foreground font-medium transition-all duration-300 hover:scale-105">
-        pheralb.dev
+        dxego.tech
       </div>
       
       <div className="flex items-center gap-4">

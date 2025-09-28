@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Dark Portfolio Design System */
 
 @layer base {
   :root {
@@ -38,7 +37,6 @@
 
     --radius: 0.5rem;
     
-    /* Gradient for hover effect */
     --card-hover-gradient: conic-gradient(from 0deg at 50% 50%, transparent 340deg, hsl(var(--primary)) 360deg);
   }
 

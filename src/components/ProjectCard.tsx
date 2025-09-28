@@ -36,7 +36,7 @@ const ProjectCard = ({
   return (
     <div 
       ref={cardRef}
-      className="project-card group relative"
+      className="project-card group relative cursor-pointer"
       onMouseMove={handleMouseMove}
     >
       <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -57,7 +57,7 @@ const ProjectCard = ({
             </div>
             {updated && (
               <span className="text-xs bg-accent text-accent-foreground px-2 py-1 rounded animate-pulse">
-                updated
+                Ongoing
               </span>
             )}
           </div>
