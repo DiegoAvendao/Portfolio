@@ -20,7 +20,10 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - **Tailwind CSS** - Styling
 - **React Router** - Client-side routing
 - **Lucide React** - Icons
+- **React Icons** - Technology icons
 - **shadcn/ui** - UI components
+- **Radix UI** - Headless UI primitives
+- **next-themes** - Theme management
 
 ## Getting Started
 
@@ -65,8 +68,9 @@ src/
 │   ├── Header.tsx      # Navigation header
 │   ├── About.tsx       # About section
 │   ├── Projects.tsx    # Projects showcase
+│   ├── ProjectCard.tsx # Individual project card
 │   ├── Experience.tsx  # Work experience
-│   └── Posts.tsx       # Blog posts
+│   └── Technologies.tsx # Technologies section
 ├── pages/              # Page components
 │   ├── Index.tsx       # Home page
 │   └── NotFound.tsx    # 404 page
@@ -109,18 +113,14 @@ const experiences = [
 ];
 ```
 
-### Adding New Posts
+### Adding New Technologies
 
-Edit the `posts` array in `src/components/Posts.tsx`:
+Edit the `technologies` array in `src/components/Technologies.tsx`:
 
 ```typescript
-const posts = [
-  {
-    title: "Your Post Title",
-    description: "Post description",
-    date: "January 1, 2024",
-    category: "Tutorial"
-  }
+const technologies = [
+  { name: "Your Technology", icon: YourIconComponent },
+  { name: "Another Tech", icon: null }
 ];
 ```
 
