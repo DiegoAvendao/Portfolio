@@ -9,43 +9,25 @@ const Projects = () => {
       description: "Ferag logistics application",
       technologies: ["TypeScript", "Angular", "CSS"],
       githubUrl: " https://avt.thws.education",
+      updated: true,
+      isLiveSite: true
+    },
+    {
+      icon: "💼",
+      title: "PickUpYourSeat-Hackathon",
+      description: "A beautiful website for booking co-working spaces",
+      technologies: ["React", "NextUI", "Tailwind CSS"],
+      githubUrl: "https://github.com/Team6-ED7/frontend"
+    },
+    
+    {
+      icon: "👩🏻‍💻",
+      title: "CV Job Matcher",
+      description: "AI project where the user can upload their CV and the system will match them with the best jobs for them",
+      technologies: ["React", "shadcn/ui", "Tailwind CSS"],
+      githubUrl: "https://github.com/DiegoAvendao",
       updated: true
     },
-    {
-      icon: "⚡",
-      title: "svgl",
-      description: "A beautiful library with SVG logos.",
-      technologies: ["Svelte", "Hono", "Upstash", "shaden/ui"],
-      githubUrl: "#"
-    },
-    {
-      icon: "⚛️",
-      title: "react-symbols",
-      description: "✨ Symbols Icons for React.",
-      technologies: ["Turborepo", "Remix", "Tailwind CSS"],
-      githubUrl: "#"
-    },
-    {
-      icon: "🐌",
-      title: "slug",
-      description: "🌱 An open-source URL shortener.",
-      technologies: ["Next.js", "T3 Stack", "Prisma"],
-      githubUrl: "#"
-    },
-    {
-      icon: "🔤",
-      title: "typethings",
-      description: "⌨️ A modern, minimal markdown editor.",
-      technologies: ["Turborepo", "Tauri", "React"],
-      githubUrl: "#"
-    },
-    {
-      icon: "⭐",
-      title: "project-hackathon",
-      description: "🌟 An open-source hackathon management.",
-      technologies: ["Next.js", "T3 Stack", "Tipc", "Prisma"],
-      githubUrl: "#"
-    }
   ];
 
   return (
