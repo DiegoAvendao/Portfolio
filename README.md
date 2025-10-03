@@ -150,8 +150,3 @@ The built files will be in the `dist` directory.
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## Contact
-
-- Portfolio: [dxego.tech](https://dxego.tech)
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
